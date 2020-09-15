@@ -1,0 +1,38 @@
+.banner {
+    height: 700px;
+    position: relative;
+    background-image: url("./images/bg_2.jpg");
+    background-position: 50% 50%;
+    overflow: hidden;
+}
+
+.banner_text {
+    position: absolute;
+    width: 100%;
+    font-size: 5rem;
+    padding: 350px 0px;
+    text-align: center;
+}
+
+.banner_word {
+    color: white;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #fff;
+}
+
+.banner_word:hover {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .4;
+    background: #000000;
+}

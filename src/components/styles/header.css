@@ -1,0 +1,48 @@
+.header_info {
+    background-color: #a23f25;
+    font-size: 0.8rem;
+}
+
+.info_one {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    color: white;
+}
+
+.info_two {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    color: white;
+}
+
+.info_item {
+    margin: 5px;
+}
+
+.fab, .fas {
+    margin-right: 5px;
+}
+
+.header_nav {
+    background-color: white
+}
+
+.nav_title {
+    font-size: 2rem;
+    font-weight: bold;
+    flex-grow: 1;
+    margin: 20px 0px;
+}
+
+.nav_pages {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.page_link {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
