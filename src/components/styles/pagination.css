@@ -1,0 +1,16 @@
+#pagination {
+    display: flex
+}
+
+.page_box {
+    height: 40px;
+    width: 40px;
+    font-weight: bold;
+    background-color: white;
+    box-sizing: border-box;
+    text-align: center;
+    border: solid 0.5px gray;
+    line-height: 40px;
+    border-radius: 50%;
+}
+

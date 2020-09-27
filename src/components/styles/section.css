@@ -23,23 +23,25 @@
 
 .section_year {
     font-style: italic;
-    color: #b7472a
+    color: #b7472a;
+    margin-bottom: 15px;
 }
 
 .section_title {
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-weight: bold;
 }
 
 .section_paragraph {
-    font-size: 1.2rem;
-    line-height: 1.7rem;
+    font-size: 1rem;
+    line-height: 2rem;
     color: gray;
+    margin-bottom: 25px;;
 }
 
 .section_experience {
     font-size: 2rem;
-    color: #b7472a
+    color: black
 }
 
 .section_two {
@@ -55,7 +57,7 @@
     border-radius: 50%;
 }
 
-.drink_name {
+.drinks_name {
     margin-top: 20px;
     font-size: 1.4rem;
     text-align: center

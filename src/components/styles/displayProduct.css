@@ -1,0 +1,82 @@
+#drinks {
+    background-color: white;
+    padding: 100px 0px;
+}
+
+.drink_row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.drink_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    width: 250px;
+    
+}
+
+.drink_window {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    margin-bottom: 10px;
+    border-radius: 3%;
+    overflow: hidden;
+}
+
+.drink_image {
+    position: absolute;
+    object-fit: cover;
+    height: 350px;
+    width: 250px;
+}
+
+.drink_overlay {
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 350px;
+    width: 250px;
+    background-color: rgb(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.drink_overlay:hover {
+    opacity: 1;
+}
+
+.drink_cart, .drink_favorite {
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: solid 1px white;
+}
+
+.drink_cart:hover, .drink_favorite:hover {
+    cursor: pointer
+}
+
+.drink_type {
+    font-style: italic;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.drink_name {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.drink_price {
+    font-style: italic;
+    margin-bottom: 10px;
+}

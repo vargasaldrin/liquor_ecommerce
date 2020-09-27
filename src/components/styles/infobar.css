@@ -34,4 +34,6 @@
 
 .info_description {
     color: white;
+    opacity: 0.6;
+    line-height: 1.5rem;
 }

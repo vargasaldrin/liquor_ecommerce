@@ -9,9 +9,9 @@ export default function Banner(props) {
     })
 
     return (
-        <div className="banner">
+        <div className="banner" style={{height: props.height}}>
             <div className="overlay"></div>
-            <div className="banner_text">{bannerWords}</div>
+            <div className="banner_text" style={{paddingTop: props.padding, paddingBottom: props.padding}}>{bannerWords}</div>
         </div>
     )
 }
