@@ -11,7 +11,7 @@ export default function DisplayProduct(props) {
             <div className="drink_window">
                 <img className="drink_image" src={item.image} alt="card" />
                 <div className="drink_overlay">
-                    <SquareIcons icon="cart" trackItem={item} />
+                    <SquareIcons icon="cart" data={item} />
                 </div>
             </div>
             <div className="drink_type">{item.type}</div>

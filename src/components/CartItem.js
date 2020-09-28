@@ -3,20 +3,13 @@ import { ThemeContext } from '../Context'
 import './styles/cartItem.css'
 
 export default function CartItem(props) {
-    const [quantity, setQuantity] = useState(1)
-    const [finalPrice, setFinalPrice] = useState(props.data.price)
-    const {cart, setCart, drinks, setDrinks} = useContext(ThemeContext)
-    const cloneCart = [...cart]
-    const cloneDrinks = [...drinks]
     const cartItem = {...props.data}
-
-    const updateTracker = (value) => {
-        const index = cloneDrinks.findIndex(item => item.id === props.data.id)
-        const item = cloneDrinks[index]
-        item.tracked = value;
-        setDrinks(cloneDrinks)
-    }
-
+    const [quantity, setQuantity] = useState(1)
+    const [finalPrice, setFinalPrice] = useState(cartItem.price)
+    const {cart, setCart, updateTracker} = useContext(ThemeContext)
+    const cloneCart = [...cart]
+    const price = cartItem.price
+    
     const handleChange = (e) => {
         let { value } = e.target
         if(value.length <= 3) {
@@ -39,13 +32,14 @@ export default function CartItem(props) {
 
     const handleClick = (e) => {
         const newCart = cart.filter(data => cartItem.id !== data.id)
-        updateTracker(false)
+        updateTracker(false, cartItem)
         setCart(newCart)
     }
 
     useEffect(() => {
-        setFinalPrice(cartItem.price * quantity)
-    }, [quantity])
+        const calculated = price * quantity
+        setFinalPrice(calculated)
+    }, [quantity, price])
 
     return (
         <div className="cart_grid cart_item" >

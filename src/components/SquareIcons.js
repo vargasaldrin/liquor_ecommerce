@@ -2,33 +2,25 @@ import React, { useState, useContext } from 'react'
 import { ThemeContext } from '../Context'
 
 export default function Box(props) {
-    const [include, setInclude] = useState(props.trackItem.tracked)
-    const { cart, setCart, drinks, setDrinks } = useContext(ThemeContext)
-
-    const cloneDrinks = [...drinks]
-    
-    const updateTracker = (value) => {
-        const index = cloneDrinks.findIndex(item => item.id === props.trackItem.id)
-        const item = cloneDrinks[index]
-        item.tracked = value;
-        setDrinks(cloneDrinks)
-    }
+    const cartItem = {...props.data}
+    const [include, setInclude] = useState(cartItem.tracked)
+    const { cart, setCart, updateTracker } = useContext(ThemeContext)
 
     const handleClick = () => {
         if(include) {
-            const newCart = cart.filter(item => item.id !== props.trackItem.id) 
+            const newCart = cart.filter(item => item.id !== props.data.id) 
             setCart(newCart)
             setInclude(false)
-            updateTracker(false)
+            updateTracker(false, cartItem)
         } else {
             const itemUpdate = {
-                ...props.trackItem,
+                ...props.data,
                 quantity: 1
             }
             const newCart = [...cart, itemUpdate]
             setCart(newCart)
             setInclude(true)
-            updateTracker(true)
+            updateTracker(true, cartItem)
         }
     }
     return (

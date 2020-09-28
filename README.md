@@ -1,3 +1,7 @@
+### Project Description
+The project's purpose is to replicate an ecommerce website with some of it's common functionalities. These functionalities are product display, 
+adding to cart, removing from cart, cost calculation, fill-in form, and data rendering.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

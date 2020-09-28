@@ -8,6 +8,14 @@ function Provider(props) {
     const [drinks, setDrinks] = useState(data)
     const [cart, setCart] = useState([])
     const [total, setTotal] = useState(0)
+    const cloneDrinks = [...drinks]
+
+    const updateTracker = (value, data) => {
+        const index = cloneDrinks.findIndex(item => item.id === data.id)
+        const item = cloneDrinks[index]
+        item.tracked = value;
+        setDrinks(cloneDrinks)
+    }
 
     useEffect(() => {
         const updateTotal = cart.map(item => item.price * item.quantity).reduce((acc, num) => acc + num, 0)
@@ -19,10 +27,10 @@ function Provider(props) {
         const end = start + 12
         const final = drinks.slice(start, end)
         setDisplay(final)
-    }, [page])
+    }, [page, drinks])
 
     return (
-        <ThemeContext.Provider value={{page, setPage, cart, setCart, display, drinks, setDrinks, total}}>
+        <ThemeContext.Provider value={{page, setPage, cart, setCart, display, drinks, setDrinks, total, updateTracker}}>
             {props.children}
         </ThemeContext.Provider>
     )
